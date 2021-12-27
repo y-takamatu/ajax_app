@@ -6,9 +6,8 @@ class PostsController < ApplicationController
 
   
 
-  def createe
+  def create
     post = Post.create(content: params[:content])
     render json:{ post: post }
-    # postの値を postというキーとセットでjavascriptに送信
   end
 end
