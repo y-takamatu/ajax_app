@@ -4,10 +4,11 @@ class PostsController < ApplicationController
     @posts = Post.order(id: "DESC")
   end
 
-  # def new
-  # end
+  
 
-  def create
-    redirect_to action: :index  # 追記する
+  def createe
+    post = Post.create(content: params[:content])
+    render json:{ post: post }
+    # postの値を postというキーとセットでjavascriptに送信
   end
 end
